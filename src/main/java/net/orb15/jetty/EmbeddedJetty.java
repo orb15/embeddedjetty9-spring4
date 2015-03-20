@@ -1,6 +1,6 @@
-package net.ljm.jetty;
+package net.orb15.jetty;
 
-import net.ljm.spring.SpringMvcInitializer;
+import net.orb15.spring.SpringMvcInitializer;
 import org.eclipse.jetty.annotations.AnnotationConfiguration;
 import org.eclipse.jetty.annotations.ClassInheritanceHandler;
 import org.eclipse.jetty.server.Server;

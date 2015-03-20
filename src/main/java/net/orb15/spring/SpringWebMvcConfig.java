@@ -1,4 +1,4 @@
-package net.ljm.spring;
+package net.orb15.spring;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages="net.ljm")
+@ComponentScan(basePackages="net.orb15")
 public class SpringWebMvcConfig extends WebMvcConfigurerAdapter {
 
 	//Tell Spring that we want to serve static content and it should look for

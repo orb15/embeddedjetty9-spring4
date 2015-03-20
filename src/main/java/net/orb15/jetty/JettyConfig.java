@@ -1,4 +1,4 @@
-package net.ljm.jetty;
+package net.orb15.jetty;
 
 /* 
  * Jetty configuration JavaBean / POJO to hold all the necessary configuration options for a Jetty embedded server

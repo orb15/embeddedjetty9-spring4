@@ -1,7 +1,7 @@
-package net.ljm.core;
+package net.orb15.core;
 
-import net.ljm.jetty.EmbeddedJetty;
-import net.ljm.jetty.JettyConfig;
+import net.orb15.jetty.EmbeddedJetty;
+import net.orb15.jetty.JettyConfig;
 
 /* 
  * Main class to launch embedded Jetty server

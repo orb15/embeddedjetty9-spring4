@@ -1,4 +1,4 @@
-package net.ljm.spring;
+package net.orb15.spring;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -16,7 +16,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 public class SpringMvcInitializer implements WebApplicationInitializer {
 
-	private static final String SPRING_CONFIG_PACKAGE = "net.ljm.spring";
+	private static final String SPRING_CONFIG_PACKAGE = "net.orb15.spring";
 	
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
