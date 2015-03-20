@@ -1,0 +1,62 @@
+//------------------------------------------------------------
+// Plugins
+//------------------------------------------------------------
+
+apply plugin: 'java' 
+apply plugin: 'eclipse'
+
+//------------------------------------------------------------
+// Variables
+//------------------------------------------------------------
+
+sourceCompatibility = 1.8
+version = '0.1'
+
+//------------------------------------------------------------
+// Dependencies
+//------------------------------------------------------------
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+    compile 'org.eclipse.jetty.aggregate:jetty-all:9.3.0.M1'
+    compile 'org.springframework:spring-webmvc:4.1.5.RELEASE'
+  	compile 'com.fasterxml.jackson.core:jackson-databind:2.5.1'
+  	compile 'org.ow2.asm:asm:5.0.3'
+}
+
+//------------------------------------------------------------
+// Fat JAR
+// thanks to: http://www.mkyong.com/gradle/gradle-create-a-jar-file-with-dependencies
+//------------------------------------------------------------
+
+task fatJar(type: Jar) {
+	manifest {
+        attributes 	'Implementation-Title': 'A test Project',  
+        			'Implementation-Version': version,
+        			'Main-Class': 'net.ljm.core.Main'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+//------------------------------------------------------------
+// Eclipse one-time stuff
+// run gradle eclipse and 
+// gradle create-dirs to set up project under workspace
+//------------------------------------------------------------
+
+eclipse {
+  project {
+    name = 'test2Project'
+  }
+}
+
+task "create-dirs" << 
+{
+   sourceSets*.java.srcDirs*.each { it.mkdirs() }
+   sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}
